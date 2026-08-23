@@ -17,8 +17,14 @@ function createCalculator() {
   };
 }
 
+function addSquareMethod(instances) {
+  for (let i = 0; i < instances.length; i++) {
+    instances[i].square = function () {
+      return instances[i].value() * instances[i].value();
+    };
+  }
+
+  return instances;
+}
 let result = createCalculator();
-console.log(result);
-console.log(result.add(5));
-console.log(result.add(5));
-console.log(result.subtract(3));
+console.log(addSquareMethod([result][0]));
