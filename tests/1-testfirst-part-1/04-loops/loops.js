@@ -7,7 +7,10 @@ function repeat(str, num) {
   return result;
 }
 
-console.log(repeat("yo", 0));
-console.log(repeat("yo", 1));
-console.log(repeat("yo", 2));
-console.log(repeat("yo", 3));
+function sum(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+}
