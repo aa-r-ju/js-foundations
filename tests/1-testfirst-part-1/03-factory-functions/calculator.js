@@ -26,5 +26,35 @@ function addSquareMethod(instances) {
 
   return instances;
 }
-let result = createCalculator();
-console.log(addSquareMethod([result][0]));
+
+const humanCalculatorPrototype = {
+  add: function (value) {
+    this.total += value;
+  },
+
+  subtract: function (value) {
+    this.total -= value;
+  },
+
+  value: function () {
+    return this.total;
+  },
+
+  clear: function () {
+    this.total = -10;
+  },
+};
+
+function createHumanCalculator() {
+  const humanCalculator = Object.create(humanCalculatorPrototype);
+
+  humanCalculator.total = -10;
+
+  return humanCalculator;
+}
+
+// let kk = Object.create(createCalculator);
+// console.log(kk);
+console.log(createHumanCalculator());
+let kk = createCalculator();
+console.log(kk.add(2));
