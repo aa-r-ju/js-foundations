@@ -14,3 +14,18 @@ function sum(arr) {
   }
   return total;
 }
+
+function join(arr, separator = "") {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str += arr[i];
+
+    if (i !== arr.length - 1) {
+      str += separator;
+    }
+  }
+  return str;
+}
+
+console.log(join(["apple", "banana", "cherry"]));
+console.log(join(["apple", "banana", "cherry"], "/"));
