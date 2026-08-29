@@ -27,5 +27,22 @@ function join(arr, separator = "") {
   return str;
 }
 
-console.log(join(["apple", "banana", "cherry"]));
-console.log(join(["apple", "banana", "cherry"], "/"));
+function gridGenerator(num) {
+  let grid = "";
+
+  for (let row = 0; row < num; row++) {
+    for (let column = 0; column < num; column++) {
+      if ((row + column) % 2 === 0) {
+        grid += "#";
+      } else {
+        grid += " ";
+      }
+    }
+
+    grid += "\n";
+  }
+
+  return grid;
+}
+
+console.log(gridGenerator(3));
