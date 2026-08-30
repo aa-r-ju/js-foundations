@@ -83,4 +83,18 @@ function paramifyObjectKeys(obj) {
 
 const object = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 };
 
-console.log(paramifyObjectKeys(object));
+function sort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+console.log(sort([17, 43, 216, 3, 9, 27]));
+console.log(sort([17, -43, 216, 3, -9, 27]));
+console.log(sort(["toad", "prune", "pretzel", "aardvark", "tuna", "weasel"]));
