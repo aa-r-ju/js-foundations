@@ -66,16 +66,21 @@ function paramify(obj) {
   return str;
 }
 
-console.log(
-  paramify({
-    height: 74,
-    width: 12,
-  })
-);
-console.log(
-  paramify({
-    size: 14,
-  })
-);
-const object = { f: 6, e: 5, d: 4, c: 3, b: 2, a: 1 };
-console.log(paramify(object));
+function paramifyObjectKeys(obj) {
+  let result = "";
+
+  let values = Object.keys(obj).sort();
+
+  for (let i = 0; i < values.length; i++) {
+    result += values[i] + "=" + obj[values[i]];
+
+    if (i !== values.length - 1) {
+      result += "&";
+    }
+  }
+  return result;
+}
+
+const object = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 };
+
+console.log(paramifyObjectKeys(object));
