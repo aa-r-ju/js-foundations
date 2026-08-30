@@ -45,4 +45,37 @@ function gridGenerator(num) {
   return grid;
 }
 
-console.log(gridGenerator(3));
+function paramify(obj) {
+  let str = "";
+  let keys = [];
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      keys.push(key);
+    }
+  }
+  keys = keys.sort();
+  for (let j = 0; j < keys.length; j++) {
+    str += keys[j] + "=" + obj[keys[j]];
+
+    if (j !== keys.length - 1) {
+      str += "&";
+    }
+  }
+
+  return str;
+}
+
+console.log(
+  paramify({
+    height: 74,
+    width: 12,
+  })
+);
+console.log(
+  paramify({
+    size: 14,
+  })
+);
+const object = { f: 6, e: 5, d: 4, c: 3, b: 2, a: 1 };
+console.log(paramify(object));
