@@ -11,3 +11,16 @@ function findObjPropsHasOwn(obj) {
   }
   return result;
 }
+
+function findObjKeys(obj) {
+  let str = "";
+
+  let values = Object.keys(obj);
+  for (let i = 0; i < values.length; i++) {
+    if (str !== "") {
+      str += ", ";
+    }
+    str += values[i];
+  }
+  return str;
+}
