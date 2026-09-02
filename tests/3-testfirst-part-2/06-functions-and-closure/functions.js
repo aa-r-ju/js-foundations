@@ -9,5 +9,24 @@ function concatString() {
   }
   return result;
 }
-console.log(concatString("David", " ", "Yang"));
-console.log(concatString("This", " ", "should", " ", "be done with join"));
+
+function yourFunctionRunner() {
+  let value = Array.from(arguments);
+  let returnedValue = "";
+
+  for (let i = 0; i < value.length; i++) {
+    let result = value[i]();
+    returnedValue += result;
+  }
+  return returnedValue;
+}
+
+const callThisFunction = () => {
+  return "Called Value";
+};
+
+const andThisFunction = () => {
+  return " and Other Value";
+};
+
+console.log(yourFunctionRunner(callThisFunction, andThisFunction));
