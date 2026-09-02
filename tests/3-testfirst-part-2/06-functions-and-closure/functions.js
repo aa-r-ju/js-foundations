@@ -29,4 +29,8 @@ const andThisFunction = () => {
   return " and Other Value";
 };
 
-console.log(yourFunctionRunner(callThisFunction, andThisFunction));
+function makeAdder(num) {
+  return function (num1) {
+    return num + num1;
+  };
+}
