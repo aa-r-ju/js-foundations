@@ -34,3 +34,24 @@ function makeAdder(num) {
     return num + num1;
   };
 }
+
+function once(fun) {
+  let count = 0;
+  return function () {
+    count++;
+    if (count <= 1) {
+      return fun();
+    } else {
+      return "the function has already been called...";
+    }
+  };
+}
+
+const sayGoodbye = () => {
+  return "Goodbye!";
+};
+
+const funcReturned = once(sayGoodbye);
+
+console.log(funcReturned());
+console.log(funcReturned());
