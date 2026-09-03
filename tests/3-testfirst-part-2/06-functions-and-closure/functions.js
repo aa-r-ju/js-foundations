@@ -64,3 +64,14 @@ function createObjectWithClosures() {
     },
   };
 }
+
+function dontSpillTheBeans(str) {
+  return {
+    getSecret: function () {
+      return str;
+    },
+    setSecret: function (newStr) {
+      str = newStr;
+    },
+  };
+}
