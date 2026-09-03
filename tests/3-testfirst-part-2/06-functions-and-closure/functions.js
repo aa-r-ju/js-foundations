@@ -47,11 +47,20 @@ function once(fun) {
   };
 }
 
-const sayGoodbye = () => {
-  return "Goodbye!";
-};
-
-const funcReturned = once(sayGoodbye);
-
-console.log(funcReturned());
-console.log(funcReturned());
+function createObjectWithClosures() {
+  let value = 0;
+  return {
+    oneIncrementer: function () {
+      value += 1;
+    },
+    tensIncrementer: function () {
+      value += 10;
+    },
+    getValue: function () {
+      return value;
+    },
+    setValue: function (num) {
+      value = num;
+    },
+  };
+}
