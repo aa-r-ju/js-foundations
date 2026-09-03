@@ -31,3 +31,20 @@ function filter(arr, fn) {
   }
   return result;
 }
+
+function includes(para, val) {
+  if (Array.isArray(para)) {
+    for (let i = 0; i < para.length; i++) {
+      if (para[i] === val) {
+        return true;
+      }
+    }
+  } else if (typeof para === "object") {
+    for (let key in para) {
+      if (para[key] === val) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
