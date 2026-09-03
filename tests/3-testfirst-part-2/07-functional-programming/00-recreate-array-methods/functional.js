@@ -48,3 +48,11 @@ function includes(para, val) {
   }
   return false;
 }
+
+function countWords(startNum, str) {
+  let val = str.split(" ").length + startNum;
+  return val;
+}
+
+console.log(countWords(0, "this is a sentence with 7 words"));
+console.log(countWords(5, "this is a sentence with 7 words"));
