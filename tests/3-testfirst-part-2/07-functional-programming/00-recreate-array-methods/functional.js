@@ -68,3 +68,12 @@ function sum(arr) {
   let result = reduce(arr, 0, (a, b) => a + b);
   return result;
 }
+
+function every(arr, fn) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!fn(arr[i])) {
+      return false;
+    }
+  }
+  return true;
+}
