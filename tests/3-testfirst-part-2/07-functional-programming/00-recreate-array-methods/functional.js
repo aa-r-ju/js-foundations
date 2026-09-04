@@ -54,5 +54,15 @@ function countWords(startNum, str) {
   return val;
 }
 
-console.log(countWords(0, "this is a sentence with 7 words"));
-console.log(countWords(5, "this is a sentence with 7 words"));
+function reduce(array, startingValue, combiningFunction) {
+  let total = startingValue;
+
+  for (let i = 0; i < array.length; i++) {
+    total = combiningFunction(total, array[i]);
+  }
+
+  return total;
+}
+
+let wordArray = ["hello there this is line 1", "and this is line 2"];
+console.log(reduce(wordArray, 0, countWords));
