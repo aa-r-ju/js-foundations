@@ -64,5 +64,7 @@ function reduce(array, startingValue, combiningFunction) {
   return total;
 }
 
-let wordArray = ["hello there this is line 1", "and this is line 2"];
-console.log(reduce(wordArray, 0, countWords));
+function sum(arr) {
+  let result = reduce(arr, 0, (a, b) => a + b);
+  return result;
+}
