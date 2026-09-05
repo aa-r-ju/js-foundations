@@ -41,3 +41,13 @@ function getPopulation(arrayOfObj, arrayOfCountry) {
   }, 0);
   return all;
 }
+
+function keyifyArrayOfObjects(name, arr) {
+  return arr.reduce((acc, curr) => {
+    if (name in curr) {
+      let key = curr[name];
+      acc[key] = curr;
+    }
+    return acc;
+  }, {});
+}
