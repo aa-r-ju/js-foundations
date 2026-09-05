@@ -27,12 +27,17 @@ function extensionSearch(str, arr) {
   });
 }
 
-console.log(
-  extensionSearch("txt", [
-    "hello.txt",
-    "hello.png",
-    "hell.csv",
-    "mlb.txt",
-    "mls.png",
-  ])
-);
+function getPopulation(arrayOfObj, arrayOfCountry) {
+  let all = arrayOfObj.reduce((acc, curr) => {
+    if (arrayOfCountry.length === 0) {
+      return (acc += curr.population);
+    }
+    for (let i = 0; i < arrayOfCountry.length; i++) {
+      if (curr.name === arrayOfCountry[i]) {
+        acc += curr.population;
+      }
+    }
+    return acc;
+  }, 0);
+  return all;
+}
