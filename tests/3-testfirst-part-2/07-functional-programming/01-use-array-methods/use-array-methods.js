@@ -7,7 +7,6 @@ function indexAndValue(arr) {
 function capitalize(str) {
   return str.toUpperCase();
 }
-console.log(capitalize("hello world"));
 
 function swapCase(sentence) {
   let arr = sentence.split(" ");
@@ -22,4 +21,18 @@ function swapCase(sentence) {
   return result.join(" ");
 }
 
-console.log(swapCase("i am going to the movies today"));
+function extensionSearch(str, arr) {
+  return arr.filter((val) => {
+    return val.endsWith(str);
+  });
+}
+
+console.log(
+  extensionSearch("txt", [
+    "hello.txt",
+    "hello.png",
+    "hell.csv",
+    "mlb.txt",
+    "mls.png",
+  ])
+);
