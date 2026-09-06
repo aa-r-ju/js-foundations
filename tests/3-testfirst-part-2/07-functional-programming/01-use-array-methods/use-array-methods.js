@@ -51,3 +51,9 @@ function keyifyArrayOfObjects(name, arr) {
     return acc;
   }, {});
 }
+function powerLevelAverage(arr) {
+  let all = arr.reduce((acc, curr) => {
+    return (acc += curr.powerLevel);
+  }, 0);
+  return Math.round(all / arr.length);
+}
