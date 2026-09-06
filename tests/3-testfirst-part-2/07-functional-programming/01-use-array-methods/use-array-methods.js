@@ -65,3 +65,13 @@ function mapReduce(arr, fn) {
     return acc;
   }, []);
 }
+
+function filterReduce(arr, fn) {
+  return arr.reduce((acc, curr) => {
+    let result = fn(curr);
+    if (result) {
+      acc.push(curr);
+    }
+    return acc;
+  }, []);
+}
