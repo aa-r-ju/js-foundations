@@ -57,3 +57,11 @@ function powerLevelAverage(arr) {
   }, 0);
   return Math.round(all / arr.length);
 }
+
+function mapReduce(arr, fn) {
+  return arr.reduce((acc, curr) => {
+    let result = fn(curr);
+    acc.push(result);
+    return acc;
+  }, []);
+}
