@@ -75,3 +75,7 @@ function filterReduce(arr, fn) {
     return acc;
   }, []);
 }
+
+function inYourBudget(budget, arr) {
+  return arr.filter((val) => val.price <= budget).map((val) => val.item);
+}
