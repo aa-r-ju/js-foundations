@@ -17,3 +17,10 @@ function sumWithReduce(arr, startingValue = 0) {
     return (acc += curr);
   }, startingValue);
 }
+
+function filterEvensDoubleAndSum(arr) {
+  return arr
+    .filter((val) => val % 2 === 0)
+    .map((val) => val * 2)
+    .reduce((acc, curr) => (acc += curr), 0);
+}
