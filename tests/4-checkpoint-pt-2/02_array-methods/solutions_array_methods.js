@@ -11,3 +11,9 @@ function useFilter(arr) {
     return val.includes("@");
   });
 }
+
+function sumWithReduce(arr, startingValue = 0) {
+  return arr.reduce((acc, curr) => {
+    return (acc += curr);
+  }, startingValue);
+}
