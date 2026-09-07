@@ -5,3 +5,9 @@ function useMapToUpperCase(str) {
     return val.toUpperCase();
   });
 }
+
+function useFilter(arr) {
+  return arr.filter((val) => {
+    return val.includes("@");
+  });
+}
