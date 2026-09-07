@@ -79,3 +79,19 @@ function filterReduce(arr, fn) {
 function inYourBudget(budget, arr) {
   return arr.filter((val) => val.price <= budget).map((val) => val.item);
 }
+
+function separateAndReturnNames(superheroes, name, lengthNum) {
+  let mapped = superheroes.map((val) => {
+    let arr = val.name.split(" ");
+    val.firstName = arr[0];
+    val.lastName = arr[1];
+    return val;
+  });
+  let filtered = mapped.filter((val) => {
+    return val[name].length <= lengthNum;
+  });
+
+  return filtered.map((val) => {
+    return val[name];
+  });
+}
