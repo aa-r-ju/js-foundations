@@ -95,3 +95,14 @@ function separateAndReturnNames(superheroes, name, lengthNum) {
     return val[name];
   });
 }
+
+function priorityTodoDuration(list) {
+  let filteredTodos = list.filter((val) => {
+    return val.priority === "high";
+  });
+
+  return filteredTodos.reduce((acc, curr) => {
+    acc += curr.duration;
+    return acc;
+  }, 0);
+}
