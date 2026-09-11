@@ -10,7 +10,7 @@ class Mammal {
   }
 
   haveBaby() {
-    let child = new Mammal(`Baby ${this.name}`);
+    const child = new Mammal(`Baby ${this.name}`);
 
     this.offspring.push(child);
 
@@ -29,7 +29,26 @@ class Cat extends Mammal {
   }
 
   haveBaby(color) {
-    let child = new Cat(`Baby ${this.name}`, color);
+    const child = new Cat(`Baby ${this.name}`, color);
+
+    this.offspring.push(child);
+
+    return child;
+  }
+}
+
+class Dog extends Mammal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+
+  bark() {
+    return "RUFF RUFF";
+  }
+
+  haveBaby(breed) {
+    const child = new Dog(`Baby ${this.name}`, breed);
 
     this.offspring.push(child);
 
