@@ -53,3 +53,31 @@ const ASCIIART = [
 
 =========`,
 ];
+
+class VanishingMan {
+  constructor(value) {
+    this.value = value;
+    this.secretWord = this.value.split("");
+    this.remainingGuesses = 6;
+    this.lettersGuessed = [];
+    this.gameState = "playing";
+  }
+
+  submitGuess(char) {
+    if (this.gameState !== "playing") {
+      return;
+    }
+
+    const small = char.toLowerCase();
+
+    if (this.lettersGuessed.includes(small)) {
+      return;
+    }
+
+    this.lettersGuessed.push(small);
+
+    if (!this.secretWord.includes(small)) {
+      this.remainingGuesses -= 1;
+    }
+  }
+}
