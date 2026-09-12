@@ -10,5 +10,9 @@ class Laptop {
   }
 }
 
-let kk = new Laptop(1005, 500);
-console.log(kk.checkSpecs());
+class Macbook extends Laptop {
+  constructor(year, size, color) {
+    super(year, size);
+    this.color = color;
+  }
+}
