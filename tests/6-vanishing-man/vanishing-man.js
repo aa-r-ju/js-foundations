@@ -80,4 +80,24 @@ class VanishingMan {
       this.remainingGuesses -= 1;
     }
   }
+
+  computeGameState() {
+    if (this.remainingGuesses === 0) {
+      this.gameState = "lost";
+      return;
+    }
+
+    let allGuessed = true;
+
+    for (let i = 0; i < this.secretWord.length; i++) {
+      if (!this.lettersGuessed.includes(this.secretWord[i])) {
+        allGuessed = false;
+        break;
+      }
+    }
+
+    if (allGuessed) {
+      this.gameState = "won";
+    }
+  }
 }
