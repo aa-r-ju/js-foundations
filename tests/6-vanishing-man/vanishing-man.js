@@ -169,3 +169,20 @@ class VanishingMan {
     }
   }
 }
+
+function simulateVanishingMan(secretWord) {
+  const game = new VanishingMan(secretWord);
+
+  const guesses = "abcdefghijklmnopqrstuvwxyz";
+
+  for (let i = 0; i < guesses.length; i++) {
+    if (game.gameState !== "playing") {
+      break;
+    }
+
+    game.submitGuess(guesses[i]);
+    game.computeGameState();
+  }
+
+  return game.getGameStateMessage();
+}
