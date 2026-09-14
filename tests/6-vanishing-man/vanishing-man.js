@@ -100,4 +100,21 @@ class VanishingMan {
       this.gameState = "won";
     }
   }
+  getSecretWordPuzzle() {
+    let puzzle = "";
+
+    for (let i = 0; i < this.secretWord.length; i++) {
+      const letter = this.secretWord[i];
+
+      if (letter === " ") {
+        puzzle += " ";
+      } else if (this.lettersGuessed.includes(letter)) {
+        puzzle += letter;
+      } else {
+        puzzle += "#";
+      }
+    }
+
+    return puzzle;
+  }
 }
