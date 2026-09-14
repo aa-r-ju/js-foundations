@@ -117,4 +117,55 @@ class VanishingMan {
 
     return puzzle;
   }
+
+  getGameStateMessage() {
+    if (this.gameState === "won") {
+      return "Winner Winner Chicken Dinner, you won!";
+    }
+
+    if (this.gameState === "lost") {
+      return `Game Over, the word was "${this.secretWord.join("")}":
+
+
+  O   
+ /|\\  
+ / \\  
+
+=========`;
+    }
+
+    if (this.remainingGuesses === 6) {
+      return `There is a total of 6 guesses remaining:
+
+
+
+
+
+
+=========`;
+    }
+
+    if (this.remainingGuesses === 3) {
+      return `There is a total of 3 guesses remaining:
+
+
+  O      
+ /|      
+
+
+=========`;
+    }
+
+    if (this.remainingGuesses === 1) {
+      return `There is a total of 1 guesses remaining:
+
+
+  O      
+ /|\\   
+ /       
+
+
+=========`;
+    }
+  }
 }
