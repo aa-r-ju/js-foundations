@@ -10,4 +10,10 @@
 
 /* eslint-disable no-unused-vars */
 
-function difference(arrayA, arrayB) {}
+function difference(arrayA, arrayB) {
+  return arrayA.filter((val) => {
+    if (!arrayB.includes(val)) {
+      return val;
+    }
+  });
+}
