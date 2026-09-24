@@ -17,3 +17,9 @@ function difference(arrayA, arrayB) {
     }
   });
 }
+
+function symmetricDiff(arr1, arr2) {
+  let result = difference(arr1, arr2);
+  let second = difference(arr2, arr1);
+  return result.concat(second);
+}
