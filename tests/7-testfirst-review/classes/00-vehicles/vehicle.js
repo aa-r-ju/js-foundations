@@ -27,12 +27,9 @@ class Tesla extends Vehicle {
   }
 
   minutesToFullCharge(currentCharge) {
-    let remainingPercentage = 100 - currentCharge;
-    let minutes =
-      (this.minutesToCharge / (100 - this.chargePercentage)) *
-      remainingPercentage;
+    let remainingCharge = 100 - currentCharge;
 
-    return `${minutes} minutes until the charge is full!`;
+    return `${remainingCharge} minutes until the charge is full!`;
   }
 }
 let teslaCar = new Tesla([300, "Model S", 50, 100, [[4, "electric", "Tesla"]]]);
