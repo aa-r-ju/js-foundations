@@ -18,3 +18,11 @@ Array.prototype.fiilter = function (callbacks) {
   });
   return filteredValue;
 };
+
+Array.prototype.reeduce = function (callbacks, initialValue) {
+  let total = initialValue;
+  this.forEach(function (val) {
+    total = callbacks(total, val);
+  });
+  return total;
+};
