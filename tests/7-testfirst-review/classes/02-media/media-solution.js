@@ -28,3 +28,19 @@ class Media {
     return add / this.ratings.length;
   }
 }
+
+class Album extends Media {
+  constructor(title, yearOfRelease, artist, tracks) {
+    super(title, yearOfRelease);
+    this.artist = artist;
+    this.tracks = tracks;
+  }
+}
+
+class Movie extends Media {
+  constructor(title, yearOfRelease, director, runTime) {
+    super(title, yearOfRelease);
+    this.director = director;
+    this.runTime = runTime;
+  }
+}
