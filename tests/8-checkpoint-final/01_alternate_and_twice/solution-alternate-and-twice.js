@@ -19,6 +19,3 @@ function twice(func) {
     return 0;
   };
 }
-const returnTen = twice(() => {
-  return 10;
-});
