@@ -8,3 +8,17 @@ function alternate(func) {
     }
   };
 }
+
+function twice(func) {
+  let count = 0;
+  return function () {
+    if (count < 2) {
+      count++;
+      return func();
+    }
+    return 0;
+  };
+}
+const returnTen = twice(() => {
+  return 10;
+});
