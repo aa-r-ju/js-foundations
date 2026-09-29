@@ -34,3 +34,20 @@ class Letter extends Character {
     return this.charCase;
   }
 }
+
+class Digit extends Character {
+  constructor(character, fontName, fontSize) {
+    super(character, fontName, fontSize);
+    this.isDigit = typeof character === "number";
+  }
+
+  integerValue() {
+    let value = Number(this.character);
+    if (!Number.isNaN(value)) {
+      this.character = value;
+      this.isDigit = true;
+    } else {
+      this.isDigit = false;
+    }
+  }
+}
