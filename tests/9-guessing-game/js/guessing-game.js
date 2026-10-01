@@ -27,6 +27,15 @@ class Game {
     this.pastGuesses = [];
     this.winningNumber = generateWinningNumber();
   }
+  difference() {
+    if (this.playersGuess - this.winningNumber > 0) {
+      return this.playersGuess - this.winningNumber;
+    }
+
+    if (this.winningNumber - this.playersGuess > 0) {
+      return this.winningNumber - this.playersGuess;
+    }
+  }
 }
 
 let kk = new Game(800, [], 600);
