@@ -73,7 +73,16 @@ class Game {
       return "You're ice cold!";
     }
   }
-}
+  provideHint() {
+    const hintArray = [
+      this.winningNumber,
+      generateWinningNumber(),
+      generateWinningNumber(),
+    ];
 
-let kk = new Game(800, [], 600);
-console.log(kk);
+    return shuffle(hintArray);
+  }
+}
+function newGame() {
+  return new Game();
+}
