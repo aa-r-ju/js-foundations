@@ -20,3 +20,14 @@ function shuffle(array) {
 
   return array;
 }
+
+class Game {
+  constructor(winningNumber) {
+    this.playersGuess = null;
+    this.pastGuesses = [];
+    this.winningNumber = generateWinningNumber();
+  }
+}
+
+let kk = new Game(800, [], 600);
+console.log(kk);
