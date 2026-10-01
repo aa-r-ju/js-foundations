@@ -36,6 +36,12 @@ class Game {
       return this.winningNumber - this.playersGuess;
     }
   }
+  isLower() {
+    if (this.playersGuess < this.winningNumber) {
+      return true;
+    }
+    return false;
+  }
 }
 
 let kk = new Game(800, [], 600);
