@@ -49,6 +49,30 @@ class Game {
     this.playersGuess = num;
     return this.checkGuess();
   }
+  checkGuess() {
+    if (this.playersGuess === this.winningNumber) {
+      return "You Win!";
+    } else if (this.pastGuesses.includes(this.playersGuess)) {
+      return "You have already guessed that number.";
+    }
+    this.pastGuesses.push(this.playersGuess);
+
+    if (this.pastGuesses.length === 5) {
+      return "You Lose.";
+    }
+
+    let difference = Math.abs(this.playersGuess - this.winningNumber);
+
+    if (difference < 10) {
+      return "You\'re burning up!";
+    } else if (difference < 25) {
+      return "You're lukewarm.";
+    } else if (difference < 50) {
+      return "You're a bit chilly.";
+    } else if (difference < 100) {
+      return "You're ice cold!";
+    }
+  }
 }
 
 let kk = new Game(800, [], 600);
