@@ -42,6 +42,13 @@ class Game {
     }
     return false;
   }
+  playersGuessSubmission(num) {
+    if (num < 1 || num > 100 || typeof num !== "number") {
+      throw "That is an invalid guess.";
+    }
+    this.playersGuess = num;
+    return this.checkGuess();
+  }
 }
 
 let kk = new Game(800, [], 600);
