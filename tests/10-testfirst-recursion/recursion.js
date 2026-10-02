@@ -26,7 +26,16 @@ function sumTheDigits(arr) {
   return arr[0] + sumTheDigits(arr.slice(1));
 }
 
-function countTheVowels() {}
+function countTheVowels(str) {
+  let arr = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  if (str.length === 0) {
+    return 0;
+  }
+  if (arr.includes(str[0])) {
+    return 1 + countTheVowels(str.slice(1));
+  }
+  return countTheVowels(str.slice(1));
+}
 
 function recSmallestInt() {}
 
