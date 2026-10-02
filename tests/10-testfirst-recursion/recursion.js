@@ -19,7 +19,12 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
-function sumTheDigits() {}
+function sumTheDigits(arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+  return arr[0] + sumTheDigits(arr.slice(1));
+}
 
 function countTheVowels() {}
 
