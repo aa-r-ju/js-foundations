@@ -3,35 +3,26 @@
 // recursively (you need to define those functions on your own).
 
 /* eslint-disable no-unused-vars */
-
-function factorial() {
-
+function factorialIterative(n) {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result = result * i;
+  }
+  return result;
 }
 
-function sumTheDigits() {
+function factorial() {}
 
-}
+function sumTheDigits() {}
 
-function countTheVowels() {
+function countTheVowels() {}
 
-}
+function recSmallestInt() {}
 
-function recSmallestInt() {
+function fib() {}
 
-}
+function stringify() {}
 
-function fib() {
+function search() {}
 
-}
-
-function stringify() {
-
-}
-
-function search() {
-
-}
-
-function recursiveMap() {
-
-}
+function recursiveMap() {}
