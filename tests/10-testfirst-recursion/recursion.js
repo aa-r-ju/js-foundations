@@ -37,8 +37,17 @@ function countTheVowels(str) {
   return countTheVowels(str.slice(1));
 }
 
-function recSmallestInt() {}
-
+function recSmallestInt(arr) {
+  if (arr.length === 1) {
+    return arr[arr.length - 1];
+  }
+  let smallest = recSmallestInt(arr.slice(1));
+  if (arr[0] < smallest) {
+    return arr[0];
+  }
+  return smallest;
+}
+recSmallestInt([1, 2, 3, 4, 5]);
 function fib() {}
 
 function stringify() {}
