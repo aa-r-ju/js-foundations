@@ -47,8 +47,12 @@ function recSmallestInt(arr) {
   }
   return smallest;
 }
-recSmallestInt([1, 2, 3, 4, 5]);
-function fib() {}
+function fib(num) {
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+  return fib(num - 1) + fib(num - 2);
+}
 
 function stringify() {}
 
