@@ -54,7 +54,58 @@ function fib(num) {
   return fib(num - 1) + fib(num - 2);
 }
 
-function stringify() {}
+function type(value) {
+  return Object.prototype.toString.call(value).slice(8, -1);
+}
+
+function stringify(value) {
+  if (Array.isArray(value)) {
+    let result = "[";
+
+    for (let i = 0; i < value.length; i++) {
+      result += stringify(value[i]);
+
+      if (i < value.length - 1) {
+        result += ",";
+      }
+    }
+
+    result += "]";
+    return result;
+  }
+
+  if (value !== null && typeof value === "object") {
+    let result = "{";
+    let keys = Object.keys(value);
+
+    for (let i = 0; i < keys.length; i++) {
+      let key = keys[i];
+
+      result += `"${key}":${stringify(value[key])}`;
+
+      if (i < keys.length - 1) {
+        result += ",";
+      }
+    }
+
+    result += "}";
+    return result;
+  }
+
+  if (typeof value === "string") {
+    return `"${value}"`;
+  }
+
+  if (value === null) {
+    return "null";
+  }
+
+  return String(value);
+}
+console.log(stringify([1, "something", []]));
+console.log(stringify([1, "a", [true, "b", [null], "c"], 3]));
+let kk = stringify([1, "a", [true, "b", [null], "c"], 3]);
+console.log(typeof kk);
 
 function search() {}
 
