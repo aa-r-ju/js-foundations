@@ -121,4 +121,17 @@ function search(matchingFunction) {
   return false;
 }
 
-function recursiveMap() {}
+function recursiveMap(arr, callback) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  const first = arr[0];
+  const rest = arr.slice(1);
+
+  if (Array.isArray(first)) {
+    return recursiveMap(first, callback).concat(recursiveMap(rest, callback));
+  }
+
+  return [callback(first)].concat(recursiveMap(rest, callback));
+}
