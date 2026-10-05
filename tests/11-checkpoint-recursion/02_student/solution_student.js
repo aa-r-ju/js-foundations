@@ -18,3 +18,13 @@ class Student {
     return countAll / this.grades.length;
   }
 }
+class Alumni extends Student {
+  constructor(name, email, year) {
+    super(name, email);
+    this.year = year;
+  }
+
+  getGraduationYear() {
+    return this.year;
+  }
+}
