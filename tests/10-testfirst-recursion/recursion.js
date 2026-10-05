@@ -102,11 +102,23 @@ function stringify(value) {
 
   return String(value);
 }
-console.log(stringify([1, "something", []]));
-console.log(stringify([1, "a", [true, "b", [null], "c"], 3]));
-let kk = stringify([1, "a", [true, "b", [null], "c"], 3]);
-console.log(typeof kk);
 
-function search() {}
+function search(matchingFunction) {
+  for (let i = 0; i < this.length; i++) {
+    const value = this[i];
+
+    if (Array.isArray(value)) {
+      if (search.call(value, matchingFunction)) {
+        return true;
+      }
+    } else {
+      if (matchingFunction(value)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
 
 function recursiveMap() {}
